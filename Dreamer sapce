@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>இயல் வெளி பாண்டியன் | AsuraEmpire2027Cinema</title>
+  <style>
+    :root {
+      --bg-void: #07050c;
+      --bg-card: rgba(18, 12, 30, 0.82);
+      --bg-card-solid: #120c1e;
+      --text-main: #f6f2ff;
+      --text-muted: #b8aed1;
+      --accent-violet: #8b3dff;
+      --accent-crimson: #ff2a6d;
+      --accent-gold: #ffb800;
+      --border-glow: rgba(139, 61, 255, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans Tamil", system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-void);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 18% 15%, rgba(139, 61, 255, 0.24), transparent 42%),
+        radial-gradient(circle at 82% 20%, rgba(255, 42, 109, 0.18), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(255, 184, 0, 0.12), transparent 48%),
+        url("446.jpg");
+      background-size: cover, cover, cover, cover;
+      background-position: center, center, center, center;
+      background-attachment: fixed;
+    }
+
+    .sky-veil {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 5, 12, 0.72) 0%, rgba(7, 5, 12, 0.88) 60%, rgba(5, 3, 9, 0.96) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-sigil {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-violet), var(--accent-crimson));
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      box-shadow: 0 0 22px rgba(255, 42, 109, 0.45);
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .url-pill {
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+      background: rgba(255, 184, 0, 0.1);
+      border: 1px solid rgba(255, 184, 0, 0.3);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-violet), var(--accent-crimson));
+      color: #fff;
+      box-shadow: 0 6px 22px rgba(139, 61, 255, 0.4);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #ff9900, var(--accent-gold));
+      color: #140d00;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 22px;
+      padding: 36px 28px;
+      margin-bottom: 26px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      line-height: 1.25;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #ffffff, #d9b8ff, var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(8, 5, 15, 0.85);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-crimson);
+      box-shadow: 0 0 0 3px rgba(255, 42, 109, 0.2);
+    }
+
+    .list-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-top: 10px;
+    }
+
+    .poster-preview {
+      max-width: 100%;
+      max-height: 220px;
+      border-radius: 10px;
+      margin-top: 8px;
+      object-fit: cover;
+    }
+
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 2, 7, 0.82);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 760px;
+      max-height: 88vh;
+      overflow-y: auto;
+      background: var(--bg-card-solid);
+      border: 1px solid var(--accent-violet);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .status-msg {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--accent-gold);
+    }
+  </style>
+</head>
+<body>
+  <div class="sky-veil"></div>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="brand-sigil">AE</div>
+        <div>
+          <div class="brand-title" id="siteTitleDisplay">இயல் வெளி பாண்டியன் — சினிமா பயணம்</div>
+          <span class="url-pill" id="liveHashDisplay">#AsuraEmpire2027Cinema</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-ghost" onclick="copyLiveUrl()">லைவ் லிங்க் காப்பி</button>
+        <button class="btn-gold" onclick="openAdminLogin()">Director Admin</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1 id="heroHeading">இயல் வெளி பாண்டியன் உருவாக்கும் சினிமா உலகில் இணையுங்கள்</h1>
+      <p id="heroSubtext">
+        நடிப்பு, உதவி/இணை இயக்குனர், ஒளிப்பதிவு மற்றும் சினிமா ஆர்வலர்கள் இணையும் தளம். எதிர்காலத்தில் OTT மற்றும் பார்வையாளர்/அஃபிலியேட் நிதி மாதிரியாக விரிவடையும் பயணம்.
+      </p>
+      <div class="header-actions">
+        <a href="#join-section"><button class="btn-primary">இப்போதே இணையுங்கள்</button></a>
+        <a href="#cult-section"><button class="btn-ghost">கல்ட் விவாதக் கூடம்</button></a>
+      </div>
+    </section>
+
+    <div class="grid-2" id="join-section">
+      <div class="card">
+        <h2>கலைஞர் & குழு விண்ணப்பம் / ஆடிஷன்</h2>
+        <form id="artistForm" onsubmit="submitArtistForm(event)">
+          <div class="field">
+            <label>பெயர்</label>
+            <input type="text" id="artistName" required placeholder="உங்கள் பெயர்" />
+          </div>
+          <div class="field">
+            <label>மொபைல் எண்</label>
+            <input type="tel" id="artistPhone" required placeholder="10 இலக்க எண்" />
+          </div>
+          <div class="field">
+            <label>பிரிவு</label>
+            <select id="artistRole">
+              <option value="Artist">நடிகர் / நடிகை (Artist)</option>
+              <option value="Assistant Director">உதவி இயக்குனர் (Assistant Director)</option>
+              <option value="Associate Director">இணை இயக்குனர் (Associate Director)</option>
+              <option value="Cameraman">ஒளிப்பதிவாளர் (Cameraman)</option>
+              <option value="Cult Follower">சினிமா ஃபாலோவர் (Cult Follower)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>ஆடிஷன் / வொர்க்கிங் வீடியோ லிங்க்</label>
+            <input type="url" id="artistVideoLink" placeholder="https://..." />
+          </div>
+          <div class="field">
+            <label>
